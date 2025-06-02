@@ -1,0 +1,43 @@
+import { defineField, defineType } from 'sanity';
+
+export const carouselType = defineType({
+  name: 'carousel',
+  title: 'Carousel',
+  type: 'document',
+  fields: [
+    defineField({
+      name: 'title',
+      title: 'Carousel Title',
+      type: 'string',
+    }),
+    defineField({
+      name: 'slides',
+      title: 'Slides',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          name: 'carouselSlide',
+          title: 'Slide',
+          fields: [
+            defineField({
+              name: 'heading',
+              title: 'Heading',
+              type: 'string',
+            }),
+            defineField({
+              name: 'content',
+              title: 'Content',
+              type: 'text',
+            }),
+            defineField({
+              name: 'buttonLabel',
+              title: 'Button Label',
+              type: 'string',
+            }),
+          ],
+        },
+      ],
+    }),
+  ],
+});

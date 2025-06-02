@@ -1,1 +1,2 @@
-export const schemaTypes = []
+import { carouselType } from './carouselType';
+export const schemaTypes = [carouselType]
